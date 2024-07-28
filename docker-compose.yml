@@ -1,0 +1,29 @@
+services:
+  scylla-node-1:
+    image: scylladb/scylla
+    restart: always
+    container_name: scylla-node1
+    command: --seed=scylla-node1, scylla-node2 --smp 1 memory 750M --overprovisioned 1 --api-address 0.0.0.0
+    networks:
+      scylla-net:
+
+  scylla-node-2:
+    image: scylladb/scylla
+    restart: always
+    container_name: scylla-node2
+    command: --seed=scylla-node1, scylla-node2 --smp 1 memory 750M --overprovisioned 1 --api-address 0.0.0.0
+    networks:
+      scylla-net:
+
+
+  scylla-node-3:
+    image: scylladb/scylla
+    restart: always
+    container_name: scylla-node3
+    command: --seed=scylla-node1, scylla-node2 --smp 1 memory 750M --overprovisioned 1 --api-address 0.0.0.0
+    networks:
+      scylla-net:
+
+networks:
+  scylla-net:
+    driver: bridge
