@@ -56,7 +56,7 @@ CREATE TABLE heartrate(
 ```
 
 
-## Inserrir Registros
+## Inserir Registros
 
 ```sql
     INSERT INTO heartrate(pet_chip_id, owner, time, heart_rate) VALUES ('c3e8b6a0-8e1a-4f0e-9e3d-6d8e5c2b9a1f','a1f9b8c7-2e3d-4c5b-9a0f-6d8e1a3c7b9', '2022-01-01 12:00:00', 80);
